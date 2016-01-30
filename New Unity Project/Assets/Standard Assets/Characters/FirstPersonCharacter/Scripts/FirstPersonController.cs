@@ -20,7 +20,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
-        //[SerializeField] private bool m_UseHeadBob;
+        [SerializeField] private bool m_UseHeadBob;
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
@@ -61,7 +61,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-          //  RotateView();
+            RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
@@ -130,7 +130,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             ProgressStepCycle(speed);
             //UpdateCameraPosition(speed);
 
-            m_MouseLook.UpdateCursorLock();
+           // m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -177,13 +177,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-       /* private void UpdateCameraPosition(float speed)
+        private void UpdateCameraPosition(float speed)
         {
             Vector3 newCameraPosition;
-            if (!m_UseHeadBob)
+           /* if (!m_UseHeadBob)
             {
                 return;
-            }
+            }*/
             if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
             {
                 m_Camera.transform.localPosition =
@@ -198,7 +198,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
             }
             m_Camera.transform.localPosition = newCameraPosition;
-        }*/
+        }
 
 
         private void GetInput(out float speed)
@@ -234,11 +234,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-      /*  private void RotateView()
+        private void RotateView()
         {
-            m_MouseLook.LookRotation (transform, m_Camera.transform);
+			if (Input.GetMouseButton (1) || Input.GetMouseButton (0)) {
+				m_MouseLook.LookRotation (transform, m_Camera.transform);
+			}
         }
-		*/
+
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
