@@ -241,7 +241,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
 			if (Input.GetMouseButton (1) || Input.GetMouseButton (0)) {
 				m_MouseLook.LookRotation (transform, m_Camera.transform);
-				Cursor.visible = false;
 			}
         }
 
