@@ -45,6 +45,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -127,10 +129,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
-            ProgressStepCycle(speed);
+           // ProgressStepCycle(speed);
             //UpdateCameraPosition(speed);
 
            // m_MouseLook.UpdateCursorLock();
+
         }
 
 
@@ -141,7 +144,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void ProgressStepCycle(float speed)
+       /* private void ProgressStepCycle(float speed)
         {
             if (m_CharacterController.velocity.sqrMagnitude > 0 && (m_Input.x != 0 || m_Input.y != 0))
             {
@@ -157,10 +160,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + m_StepInterval;
 
             PlayFootStepAudio();
-        }
+        }*/
 
 
-        private void PlayFootStepAudio()
+      /*  private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
             {
@@ -174,17 +177,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
-        }
+        }*/
 
 
-        private void UpdateCameraPosition(float speed)
+       	private void UpdateCameraPosition(float speed)
         {
             Vector3 newCameraPosition;
            /* if (!m_UseHeadBob)
             {
                 return;
             }*/
-            if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
+          /*  if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
             {
                 m_Camera.transform.localPosition =
                     m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
@@ -196,8 +199,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 newCameraPosition = m_Camera.transform.localPosition;
                 newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
-            }
-            m_Camera.transform.localPosition = newCameraPosition;
+			}*/
+           // m_Camera.transform.localPosition = newCameraPosition;
         }
 
 
@@ -238,6 +241,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
 			if (Input.GetMouseButton (1) || Input.GetMouseButton (0)) {
 				m_MouseLook.LookRotation (transform, m_Camera.transform);
+				Cursor.visible = false;
 			}
         }
 
