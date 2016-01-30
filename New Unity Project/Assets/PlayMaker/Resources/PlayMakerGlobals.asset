@@ -13,7 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variables:
     floatVariables: []
-    intVariables: []
+    intVariables:
+    - useVariable: 1
+      name: current_balls
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     boolVariables: []
     stringVariables: []
     vector2Variables: []
@@ -21,7 +27,13 @@ MonoBehaviour:
     colorVariables: []
     rectVariables: []
     quaternionVariables: []
-    gameObjectVariables: []
+    gameObjectVariables:
+    - useVariable: 1
+      name: ball_manager
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
     objectVariables: []
     materialVariables: []
     textureVariables: []
@@ -29,6 +41,7 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 
+    variableCategoryIDs: 0000000000000000
   events:
   - IfDoorClicked
+  - add_ball
