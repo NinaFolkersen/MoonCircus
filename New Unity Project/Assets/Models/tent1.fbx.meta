@@ -6,10 +6,26 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: CircusTent 1
+    100004: LeftDoor
+    100006: RightDoor
     400000: //RootNode
+    400002: CircusTent 1
+    400004: LeftDoor
+    400006: RightDoor
     2300000: //RootNode
+    2300002: CircusTent 1
+    2300004: LeftDoor
+    2300006: RightDoor
     3300000: //RootNode
+    3300002: CircusTent 1
+    3300004: LeftDoor
+    3300006: RightDoor
     4300000: pCylinder1
+    4300002: CircusTent
+    4300004: LeftDoor
+    4300006: RightDoor
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
