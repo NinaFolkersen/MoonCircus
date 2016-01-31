@@ -37,7 +37,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
        // private Vector3 m_OriginalCameraPosition;
-        private float m_StepCycle;
+       // private float m_StepCycle;
        // private float m_NextStep;
         private bool m_Jumping;
       //  private AudioSource m_AudioSource;
@@ -52,7 +52,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
       //      m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
             m_HeadBob.Setup(m_Camera, m_StepInterval);
-            m_StepCycle = 0f;
+      //      m_StepCycle = 0f;
       //      m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
        //     m_AudioSource = GetComponent<AudioSource>();
