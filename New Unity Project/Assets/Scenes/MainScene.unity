@@ -2580,7 +2580,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1001 &249158853
 Prefab:
   m_ObjectHideFlags: 0
@@ -5742,7 +5742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443202, guid: e520e792792559445bcf3dc335dd4817, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11473686, guid: e520e792792559445bcf3dc335dd4817, type: 2}
       propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
@@ -5756,6 +5756,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2336440, guid: e520e792792559445bcf3dc335dd4817, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0f5e124491383e4691efa7405b8407f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e520e792792559445bcf3dc335dd4817, type: 2}
   m_IsPrefabParent: 0
